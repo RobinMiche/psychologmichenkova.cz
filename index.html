@@ -55,7 +55,7 @@
       <span></span><span></span><span></span>
     </button>
     <ul class="nav-menu" id="nav-menu">
-      <li><a href="#o-mne">O mně / o nás</a></li>
+      <li><a href="#o-mne">O mně</a></li>
       <li><a href="#skupiny">Seberozvojové skupiny</a></li>
       <li><a href="#terapie">Terapie</a></li>
       <li><a href="#cenik">Ceník</a></li>
@@ -75,19 +75,19 @@
         <span>psycholog / terapeut / krizový intervent</span>
       </h1>
       <p class="hero-sub">seberozvojové skupiny / individuální terapie / psychologické poradenství</p>
-      <a href="#kontakt" class="pill-btn pill-white pill-lg">Objednejte se</a>
+      <a href="#formular" class="pill-btn pill-white pill-lg" data-zajem="Individuální terapie">Objednejte se</a>
     </div>
   </section>
 
   <!-- O MNĚ -->
-  <!-- TODO: Petra dodá delší text „O mně / o nás“ (vzdělání, praxe, přístup). Zatím jen fakta z podkladů. -->
+  <!-- TODO: Petra dodá delší text „O mně“ (vzdělání, praxe, přístup). Zatím jen fakta z podkladů. -->
   <section id="o-mne" class="section">
     <div class="container about">
       <img class="about-photo" src="images/petra-michenkova.jpg" alt="Mgr. Petra Michenková" width="900" height="1350" loading="lazy">
       <div class="about-text">
-        <h2 class="display">O mně <em>/ o nás</em></h2>
+        <h2 class="display">O mně</h2>
         <p>Jsem psycholožka, terapeutka a krizová interventka v Olomouci. Poskytuji individuální terapii a psychologické poradenství dospělým, dospívajícím a dětem od sedmi let. Specializuji se na práci s klienty s Aspergerovým syndromem.</p>
-        <p>Pro středoškolské studenty jsme v Olomouci otevřeli seberozvojové skupiny zaměřené na zvládání stresu, úzkosti a psychické nepohody.</p>
+        <p>Pro středoškolské studenty jsem v Olomouci otevřela seberozvojové skupiny zaměřené na zvládání stresu, úzkosti a psychické nepohody.</p>
         <div class="about-links">
           <a href="#terapie" class="pill-btn pill-purple">Individuální terapie</a>
           <a href="#skupiny" class="pill-btn pill-blue">Seberozvojové skupiny</a>
@@ -104,7 +104,7 @@
         <p class="lead">Zažijte pozitivní atmosféru skupiny a vytvořte si nové mezilidské vztahy.<br>
           Podělte se o své starosti a zjistěte, že někteří to cítí stejně.<br>
           Naučte se nové strategie, jak zvládat stres, úzkost a psychickou nepohodu.</p>
-        <a href="mailto:psychologmichenkova@gmail.com?subject=P%C5%99ihl%C3%A1%C5%A1ka%20do%20seberozvojov%C3%A9%20skupiny" class="pill-btn pill-blue pill-lg">
+        <a href="#formular" class="pill-btn pill-blue pill-lg" data-zajem="Seberozvojová skupina">
           <img src="images/ruka.png" alt="" width="20" height="34" class="btn-icon">Přihlášení
         </a>
       </div>
@@ -211,7 +211,7 @@
       <div class="price-grid">
         <article class="price-card">
           <h3>Individuální terapie</h3>
-          <p class="price">900 Kč <span>/ 50 minut</span></p>
+          <p class="price">1 200 Kč <span>/ 50 minut</span></p>
           <p>Platbu je možné uhradit v hotovosti na konci sezení nebo převodem na účet pomocí QR kódu.</p>
           <p>V případě zrušení konzultace později než 24 hodin před sjednaným termínem je účtován storno poplatek v plné výši sezení.</p>
           <p class="muted">Číslo účtu: 204218722/0600</p>
@@ -249,6 +249,51 @@
         </a>
       </div>
       <p class="center muted">IČO: 23436000</p>
+
+      <div class="form-wrap" id="formular">
+        <h3 class="form-title">Napište mi</h3>
+        <p class="center muted">Ozvu se vám co nejdříve a domluvíme termín.</p>
+
+        <!-- TODO: nahradit FORMSPREE_ID ID formuláře z formspree.io -->
+        <form id="contactForm" class="contact-form" action="https://formspree.io/f/FORMSPREE_ID" method="POST">
+          <input type="hidden" name="_subject" value="Nová zpráva z webu psychologmichenkova.cz">
+          <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+          <div class="form-row">
+            <label for="f-jmeno">Jméno a příjmení *</label>
+            <input id="f-jmeno" name="jmeno" type="text" required autocomplete="name">
+          </div>
+          <div class="form-row form-row-half">
+            <div>
+              <label for="f-email">E-mail *</label>
+              <input id="f-email" name="email" type="email" required autocomplete="email">
+            </div>
+            <div>
+              <label for="f-telefon">Telefon</label>
+              <input id="f-telefon" name="telefon" type="tel" autocomplete="tel">
+            </div>
+          </div>
+          <div class="form-row">
+            <label for="f-zajem">O co máte zájem *</label>
+            <select id="f-zajem" name="zajem" required>
+              <option value="Individuální terapie">Individuální terapie</option>
+              <option value="Seberozvojová skupina">Seberozvojová skupina</option>
+              <option value="Psychologické poradenství">Psychologické poradenství</option>
+              <option value="Jiné">Jiné</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label for="f-zprava">Zpráva *</label>
+            <textarea id="f-zprava" name="zprava" rows="5" required placeholder="Stačí krátce: s čím byste se chtěli obrátit a kdy se vám hodí termín."></textarea>
+          </div>
+          <label class="form-consent">
+            <input type="checkbox" name="souhlas" value="ano" required>
+            <span>Souhlasím se zpracováním osobních údajů za účelem odpovědi na mou zprávu. Údaje nebudou použity k jinému účelu. Podrobnosti o zdravotním stavu prosím sdělte až osobně.</span>
+          </label>
+          <button type="submit" class="pill-btn pill-purple pill-lg">Odeslat</button>
+          <p class="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
     </div>
   </section>
 

@@ -213,3 +213,27 @@ ol li { margin-bottom: .4em; }
   html { scroll-behavior: auto; }
   * { transition: none !important; }
 }
+
+/* Formulář */
+.form-wrap { max-width: 720px; margin: clamp(48px, 6vw, 80px) auto 0; background: var(--white); border-radius: 28px; padding: clamp(24px, 5vw, 52px); }
+.form-title { font-family: var(--serif); font-weight: 400; font-size: clamp(1.8rem, 3.4vw, 2.6rem); text-align: center; }
+.contact-form { margin-top: 1.6rem; }
+.form-row { margin-bottom: 1.1rem; }
+.form-row-half { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.contact-form label { display: block; font-size: .9rem; font-weight: 500; margin-bottom: .35rem; }
+.contact-form input, .contact-form select, .contact-form textarea {
+  width: 100%; font: inherit; font-size: 1rem; color: var(--ink);
+  background: var(--paper-light); border: 1px solid var(--line); border-radius: 14px;
+  padding: .75em 1em;
+}
+.contact-form textarea { resize: vertical; min-height: 130px; }
+.contact-form input:focus, .contact-form select:focus, .contact-form textarea:focus { outline: 2px solid var(--purple); outline-offset: 1px; border-color: transparent; }
+.contact-form .form-consent { display: flex; gap: .7rem; align-items: flex-start; font-weight: 400; font-size: .88rem; color: var(--ink-soft); margin: .4rem 0 1.6rem; }
+.form-consent input { width: 1.1rem; height: 1.1rem; margin-top: .2rem; flex-shrink: 0; accent-color: var(--purple); }
+.contact-form button { border: 0; cursor: pointer; display: flex; margin: 0 auto; }
+.contact-form button:disabled { opacity: .6; cursor: wait; }
+.hp { position: absolute; left: -9999px; }
+.form-status { text-align: center; margin: 1rem 0 0; font-weight: 500; }
+.form-status.ok { color: #2f7a4d; }
+.form-status.err { color: #b3261e; }
+@media (max-width: 560px) { .form-row-half { grid-template-columns: 1fr; } }
