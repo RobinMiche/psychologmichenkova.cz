@@ -120,6 +120,11 @@ p + .caps, ol + .caps { margin-top: 1.6em; }
 .about-photo { border-radius: 260px 260px 24px 24px; aspect-ratio: 3 / 4; object-fit: cover; object-position: center 35%; width: 100%; }
 .about-links { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 1.6rem; }
 
+/* Terapie – úvod s ilustrací */
+.split { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(24px, 5vw, 64px); align-items: center; }
+.split-img { max-height: 640px; width: auto; margin: 0 auto; }
+.split-text .pill-btn { margin-top: 1rem; }
+
 .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 6vw, 96px); align-items: start; }
 
 .star-list { list-style: none; padding: 0; margin: 0 0 1em; }
@@ -188,7 +193,8 @@ ol li { margin-bottom: .4em; }
   .nav-menu a:not(.pill-btn) { display: block; padding: .6em .4em; font-size: 1.1rem; }
   .nav-menu .pill-btn { margin-top: .6rem; width: 100%; }
 
-  .about, .two-col { grid-template-columns: 1fr; }
+  .about, .split, .two-col { grid-template-columns: 1fr; }
+  .split-img { max-height: 460px; }
   .about-photo { max-width: 440px; margin: 0 auto; }
   .contact-grid { grid-template-columns: 1fr; }
 }
