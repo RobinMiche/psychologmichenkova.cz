@@ -55,7 +55,6 @@ p { margin: 0 0 1em; }
 .pill-purple { background: var(--purple); color: var(--white); }
 .pill-blue { background: var(--blue); color: var(--white); }
 .pill-blue:hover { background: var(--blue-dark); }
-.btn-icon { width: 18px; height: auto; }
 
 /* Header */
 .site-header {
@@ -121,14 +120,7 @@ p + .caps, ol + .caps { margin-top: 1.6em; }
 .about-photo { border-radius: 260px 260px 24px 24px; aspect-ratio: 3 / 4; object-fit: cover; object-position: center 35%; width: 100%; }
 .about-links { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 1.6rem; }
 
-/* Skupiny */
-.split { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(24px, 5vw, 64px); align-items: center; }
-.split-img { max-height: 760px; width: auto; margin: 0 auto; }
-.split-text .display { margin-bottom: .4em; }
-.split-text .pill-btn { margin-top: 1.4rem; }
-
 .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 6vw, 96px); align-items: start; }
-.bordered { border-top: 1px solid var(--line); padding-top: clamp(48px, 6vw, 80px); }
 
 .star-list { list-style: none; padding: 0; margin: 0 0 1em; }
 .star-list li { position: relative; padding-left: 2rem; margin-bottom: 1em; }
@@ -148,7 +140,7 @@ ol li { margin-bottom: .4em; }
 .tags li { background: var(--paper-light); border: 1px solid var(--line); border-radius: var(--radius); padding: .35em 1em; font-size: .93em; }
 
 /* Ceník */
-.price-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(20px, 3vw, 36px); margin-top: 2.4rem; }
+.price-single { max-width: 640px; margin: 2.4rem auto 0; }
 .price-card { background: var(--white); border-radius: 28px; padding: clamp(24px, 4vw, 44px); }
 .price-card h3 { font-family: var(--serif); font-weight: 400; font-size: clamp(1.5rem, 2.4vw, 2rem); }
 .price { font-family: var(--serif); color: var(--purple); font-size: clamp(2.2rem, 4vw, 3rem); line-height: 1; margin-bottom: .6em; }
@@ -196,9 +188,8 @@ ol li { margin-bottom: .4em; }
   .nav-menu a:not(.pill-btn) { display: block; padding: .6em .4em; font-size: 1.1rem; }
   .nav-menu .pill-btn { margin-top: .6rem; width: 100%; }
 
-  .about, .split, .two-col, .price-grid { grid-template-columns: 1fr; }
+  .about, .two-col { grid-template-columns: 1fr; }
   .about-photo { max-width: 440px; margin: 0 auto; }
-  .split-img { max-height: 520px; }
   .contact-grid { grid-template-columns: 1fr; }
 }
 
